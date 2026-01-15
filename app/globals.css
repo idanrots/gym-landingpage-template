@@ -3,17 +3,14 @@
 @tailwind utilities;
 
 :root {
-  /* צבע רקע - שמנת נעימה */
-  --background: #fdfbf7;
-  /* צבע טקסט - חום אספרסו */
-  --foreground: #4a3b32;
-  /* צבע ראשי - חמרה/נחושת (מהלוגו) */
-  --primary: #c47f5b;
-  /* צבע משני - בז' חולי */
-  --secondary: #f4efe9;
+  /* פלטת הצבעים החדשה */
+  --background: #fdfbf7;  /* רקע שמנת */
+  --foreground: #4a3b32;  /* טקסט חום כהה */
+  --primary: #c47f5b;     /* חמרה (מהלוגו) */
+  --secondary: #f4efe9;   /* בז' בהיר */
 }
 
-/* הנה הקסם - זה מה שעושה את הגלילה החלקה */
+/* גלילה חלקה לכל האתר */
 html {
   scroll-behavior: smooth;
 }
@@ -21,17 +18,17 @@ html {
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* הגדרות עיצוב מיוחדות */
 @layer utilities {
+  /* רקע נקודות עדין */
   .bg-dot-pattern {
     background-color: var(--background);
     background-image: radial-gradient(#e5ddd5 1px, transparent 1px);
     background-size: 32px 32px;
   }
   
+  /* אנימציה */
   .animate-fade-in {
     animation: fadeIn 0.8s ease-out forwards;
     opacity: 0;

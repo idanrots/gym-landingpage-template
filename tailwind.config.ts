@@ -9,11 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // כאן אנחנו מחברים את ה-CSS ל-Tailwind
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: "var(--primary)",
         secondary: "var(--secondary)",
+      },
+      fontFamily: {
+        // כאן אנחנו קובעים שהפונט הראשי של האתר יהיה Varela Round
+        sans: ["var(--font-varela)", "sans-serif"],
+        // ואם נרצה, יש גם את רוביק לגיבוי
+        rubik: ["var(--font-rubik)", "sans-serif"],
       },
     },
   },
