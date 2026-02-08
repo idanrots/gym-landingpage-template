@@ -6,6 +6,9 @@ import {
   Instagram, 
   MessageCircle, 
   Trophy,
+  Smartphone,
+  Dumbbell,
+  ClipboardList,
   Target,
   Zap,
   Quote
@@ -31,53 +34,69 @@ export default function DvirMoskovichNewPage() {
   const instagramLink = "https://www.instagram.com/dvir_moskowitz8?igsh=ZHEwcHNlZGJrOWlj&utm_source=qr";
   const tiktokLink = "https://www.tiktok.com/@dvir_moskowitz?_r=1&_t=ZS-93daRjEZkpR";
 
-  // נתונים לסקשן המהפכים - מעודכן עם התמונות החדשות
+  // נתונים לסקשן המהפכים
   const transformations = [
     {
       id: 1,
       name: "עמית ר.",
       achievement: "ירידה של 18 ק״ג",
       text: "חשבתי שניסיתי הכל, אבל השיטה של דביר הוכיחה לי שאפשר אחרת. האנרגיות שלי בשמיים.",
-      imgBefore: "/before2.jpeg",  // תמונה חדשה
-      imgAfter: "/after2.jpeg"     // תמונה חדשה
+      imgBefore: "/before2.jpeg", 
+      imgAfter: "/after2.jpeg"   
     },
     {
       id: 2,
       name: "דניאל ק.",
       achievement: "חיטוב ועליה במסה",
       text: "לא רק הגוף השתנה, אלא כל הביטחון העצמי שלי. דביר לא מוותר לך, וזה בדיוק מה שהייתי צריך.",
-      imgBefore: "/before1.png",   // תמונה חדשה (שים לב שזה PNG)
-      imgAfter: "/after1.jpeg"     // תמונה חדשה
+      imgBefore: "/before1.png",
+      imgAfter: "/after1.jpeg"
     },
     {
       id: 3,
       name: "רועי מ.",
       achievement: "הכנה לתחרות",
       text: "מקצוענות ברמה הכי גבוהה שיש. הדיוק בתזונה ובאימונים הביא אותי לשיא של החיים שלי.",
-      imgBefore: "/api/placeholder/300/400", // נשאר כטמפלייט
-      imgAfter: "/api/placeholder/300/400"    // נשאר כטמפלייט
+      imgBefore: "/api/placeholder/300/400",
+      imgAfter: "/api/placeholder/300/400"
     }
   ];
 
   // רשימת האייקונים - רקע שחור מלא
   const socialLinks = [
     { 
-      // וואטסאפ - ירוק
       icon: <MessageCircle size={28} />, 
       link: whatsappLink,
       styles: "border-green-500 text-green-500 shadow-[0_0_20px_-5px_rgba(34,197,94,0.3)] hover:shadow-[0_0_30px_-5px_rgba(34,197,94,0.6)]"
     },
     { 
-      // טיקטוק - תכלת/ציאן
       icon: <TikTokIcon size={24} />, 
       link: tiktokLink, 
       styles: "border-cyan-400 text-cyan-400 shadow-[0_0_20px_-5px_rgba(34,211,238,0.3)] hover:shadow-[0_0_30px_-5px_rgba(34,211,238,0.6)]"
     },
     { 
-      // אינסטגרם - ורוד
       icon: <Instagram size={28} />, 
       link: instagramLink,
       styles: "border-pink-500 text-pink-500 shadow-[0_0_20px_-5px_rgba(236,72,153,0.3)] hover:shadow-[0_0_30px_-5px_rgba(236,72,153,0.6)]"
+    }
+  ];
+
+  // הגדרת השירותים (הקוביות)
+  const services = [
+    { 
+      title: "ליווי אונליין", 
+      icon: <Smartphone />, 
+      desc: "מעטפת ליווי מלאה 24/7 לכל מטרה. כולל בניית תוכנית אימונים, תפריט תזונה מותאם אישית ומעקב שקילות שבועי. זמינות מלאה בוואטסאפ לתיקון טכניקה ודיוקים בזמן אמת." 
+    },
+    { 
+      title: "אימונים אישיים", 
+      icon: <Dumbbell />, 
+      desc: "אימון 1 על 1 בסטודיו פרטי ומאובזר ברמה הגבוהה ביותר. יחס אישי, דגש על ביצוע מושלם, ודחיפה לקצה היכולת באווירה מחשמלת שאי אפשר למצוא בחדר כושר רגיל." 
+    },
+    { 
+      title: "תפריט / תוכנית אימונים", 
+      icon: <ClipboardList />, 
+      desc: "פתרון מושלם למי שרוצה לרוץ עצמאית. בניית תוכנית עבודה מדויקת ומסודרת, תפריט גמיש והנחיות ברורות שיעשו לך סדר בראש ויובילו אותך לתוצאות." 
     }
   ];
 
@@ -91,25 +110,16 @@ export default function DvirMoskovichNewPage() {
         <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-900/10 blur-[120px] rounded-full mix-blend-screen" />
       </div>
 
-      {/* Navbar - Sticky */}
+      {/* Navbar */}
       <nav className="fixed top-0 w-full z-50 border-b border-white/5 bg-[#050507]/80 backdrop-blur-md transition-all duration-300">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            
-            {/* Logo Area */}
             <div className="flex items-center gap-3 cursor-pointer group">
                 <div className="w-10 h-10 rounded-full bg-white overflow-hidden p-0.5 border border-cyan-500/30 shadow-[0_0_15px_rgba(6,182,212,0.2)] group-hover:shadow-[0_0_25px_rgba(6,182,212,0.4)] transition-all">
                      <img src="/logo.jpeg" alt="Logo" className="w-full h-full object-cover" />
                 </div>
             </div>
-
-            {/* Buttons Area */}
             <div className="flex items-center">
-                <a 
-                  href={whatsappLink} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-6 py-2.5 rounded-full bg-cyan-500 hover:bg-cyan-400 text-black font-bold text-sm transition-all shadow-[0_0_20px_-5px_rgba(6,182,212,0.5)] hover:shadow-[0_0_25px_-5px_rgba(6,182,212,0.8)] hover:scale-105 active:scale-95"
-                >
+                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-2.5 rounded-full bg-cyan-500 hover:bg-cyan-400 text-black font-bold text-sm transition-all shadow-[0_0_20px_-5px_rgba(6,182,212,0.5)] hover:shadow-[0_0_25px_-5px_rgba(6,182,212,0.8)] hover:scale-105 active:scale-95">
                     <span>בוא נתחיל</span>
                     <ArrowLeft size={16} />
                 </a>
@@ -120,13 +130,7 @@ export default function DvirMoskovichNewPage() {
       {/* Hero Section */}
       <header className="relative min-h-screen flex items-center justify-center pt-20 px-6 z-10">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-          
-          <motion.div 
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-right order-2 lg:order-1"
-          >
+          <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="text-right order-2 lg:order-1">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-950/30 border border-cyan-500/20 mb-8 backdrop-blur-sm">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
@@ -134,65 +138,50 @@ export default function DvirMoskovichNewPage() {
               </span>
               <span className="text-cyan-400 font-bold tracking-wider uppercase text-[11px]">דביר מוסקוביץ</span>
             </div>
-            
             <h1 className="text-4xl md:text-6xl lg:text-[75px] font-black mb-6 leading-[1.1] tracking-tight">
               הגרסה הכי חזקה <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-l from-white via-slate-300 to-slate-500">
-                שאי פעם הייתה לך
-              </span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-l from-white via-slate-300 to-slate-500">שאי פעם הייתה לך</span>
             </h1>
-
             <p className="text-lg md:text-xl text-slate-400 max-w-lg mb-10 font-light leading-relaxed">
               זה לא רק המשקל על המוט, זה הביטחון מול המראה. בוא נשבור את הגבולות המנטליים שלך ונבנה גוף שאי אפשר להתעלם ממנו.
             </p>
-            
             <div className="flex flex-col sm:flex-row gap-4">
-              <a 
-                 href={whatsappLink} 
-                 target="_blank" 
-                 rel="noopener noreferrer"
-                 className="group relative overflow-hidden px-8 py-4 bg-white text-black rounded-xl font-bold transition-all hover:shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)] hover:scale-[1.02] flex items-center justify-center gap-3"
-              >
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="group relative overflow-hidden px-8 py-4 bg-white text-black rounded-xl font-bold transition-all hover:shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)] hover:scale-[1.02] flex items-center justify-center gap-3">
                 <span>בוא נתחיל לעבוד</span>
                 <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
               </a>
-              
               <a href="#results" className="px-8 py-4 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md hover:bg-white/10 transition-all font-medium text-slate-300 hover:text-white flex items-center justify-center">
                 צפה בתוצאות
               </a>
             </div>
           </motion.div>
 
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
-            className="relative order-1 lg:order-2 flex justify-center"
-          >
+          <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }} className="relative order-1 lg:order-2 flex justify-center">
             <div className="relative aspect-[4/5] w-full max-w-[90%] rounded-[2rem] bg-gradient-to-b from-[#1a1a20] to-[#0a0a0c] overflow-hidden border border-white/10 shadow-2xl group">
-               {/* תאורה אחורית לתמונה */}
                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(34,211,238,0.15),transparent_70%)] z-10 pointer-events-none" />
-               
-               {/* התמונה של דביר */}
-               <img 
-                    src="/dvir.jpeg" 
-                    alt="דביר מוסקוביץ" 
-                    className="absolute inset-0 w-full h-full object-cover z-0" 
-               />
-               
-               {/* התגית הצפה */}
-               <div className="absolute bottom-8 left-8 right-8 bg-black/60 backdrop-blur-xl border border-white/10 p-4 rounded-2xl flex items-center gap-4 z-20">
-                    <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center text-green-400">
-                        <Trophy size={20} />
-                    </div>
-                    <div>
-                        <p className="text-sm font-bold text-white">מקצוענות מוכחת</p>
-                    </div>
-               </div>
+               <img src="/dvir.jpeg" alt="דביר מוסקוביץ" className="absolute inset-0 w-full h-full object-cover z-0" />
             </div>
           </motion.div>
         </div>
       </header>
+
+      {/* About Me Section - UPDATED TEXT */}
+      <section className="py-12 relative z-10">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="bg-gradient-to-br from-white/[0.05] to-transparent border border-white/10 rounded-[2rem] p-10 md:p-14 text-center backdrop-blur-md relative overflow-hidden">
+            {/* אלמנט דקורטיבי זוהר */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50"></div>
+            
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">נעים להכיר, <span className="text-cyan-400">דביר.</span></h2>
+            
+            <p className="text-slate-300 text-lg md:text-xl leading-loose font-light">
+              אני חי את עולם הכושר כבר למעלה מעשור, עם ניסיון עשיר בליווי מתאמנים ורזומה תחרותי בעולם פיתוח הגוף.
+              הדרך שעברתי לימדה אותי שאין קיצורי דרך – רק דיוק, התמדה ומדע.
+              אני כאן כדי להעביר את הידע הזה אליכם, ולבנות יחד את הגרסה הכי חזקה ואסתטית שלכם.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Services Section */}
       <section className="py-24 px-6 relative z-10">
@@ -203,11 +192,7 @@ export default function DvirMoskovichNewPage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { title: "תוכנית אימונים", icon: <Zap />, desc: "אסטרטגיה מותאמת אישית שדוחפת אותך לקצה היכולת." },
-              { title: "ליווי תזונתי", icon: <Target />, desc: "דיוק קלורי ומקרוז כדי לתדלק את הביצועים שלך." },
-              { title: "מנטליות של ברזל", icon: <Trophy />, desc: "שינוי תודעתי שמוביל לתוצאות שנשמרות לאורך זמן." }
-            ].map((item, idx) => (
+            {services.map((item, idx) => (
               <motion.div 
                 key={idx}
                 whileHover={{ y: -5 }}
@@ -224,7 +209,7 @@ export default function DvirMoskovichNewPage() {
         </div>
       </section>
 
-      {/* Before & After Section */}
+      {/* Results Section */}
       <section id="results" className="py-24 relative z-10 bg-white/[0.02] border-y border-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -234,53 +219,25 @@ export default function DvirMoskovichNewPage() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {transformations.map((item) => (
-                <motion.div 
-                    key={item.id}
-                    whileHover={{ y: -5 }}
-                    className="bg-[#0a0a0c] border border-white/10 rounded-3xl overflow-hidden hover:border-cyan-500/30 transition-all duration-500 shadow-2xl"
-                >
-                    {/* Images Container */}
+                <motion.div key={item.id} whileHover={{ y: -5 }} className="bg-[#0a0a0c] border border-white/10 rounded-3xl overflow-hidden hover:border-cyan-500/30 transition-all duration-500 shadow-2xl">
                     <div className="flex h-64 relative">
-                        {/* Before Image */}
                         <div className="w-1/2 relative border-l border-white/10 bg-slate-800">
-                             {/* Replace src with real image */}
-                            <img 
-                                src={item.imgBefore} 
-                                alt="לפני" 
-                                className="absolute inset-0 w-full h-full object-cover"
-                            />
-                            <div className="absolute top-3 right-3 bg-black/60 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold text-slate-300 border border-white/10">
-                                לפני
-                            </div>
+                            <img src={item.imgBefore} alt="לפני" className="absolute inset-0 w-full h-full object-cover" />
+                            <div className="absolute top-3 right-3 bg-black/60 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold text-slate-300 border border-white/10">לפני</div>
                         </div>
-                        {/* After Image */}
                         <div className="w-1/2 relative bg-slate-700">
-                            {/* Replace src with real image */}
-                            <img 
-                                src={item.imgAfter} 
-                                alt="אחרי" 
-                                className="absolute inset-0 w-full h-full object-cover"
-                            />
-                            <div className="absolute top-3 left-3 bg-cyan-500/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold text-black shadow-[0_0_15px_rgba(6,182,212,0.4)]">
-                                אחרי
-                            </div>
+                            <img src={item.imgAfter} alt="אחרי" className="absolute inset-0 w-full h-full object-cover" />
+                            <div className="absolute top-3 left-3 bg-cyan-500/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold text-black shadow-[0_0_15px_rgba(6,182,212,0.4)]">אחרי</div>
                         </div>
                     </div>
-
-                    {/* Content Container */}
                     <div className="p-8 text-right">
                         <div className="flex justify-between items-start mb-4">
                             <h3 className="text-xl font-bold text-white">{item.name}</h3>
-                            <span className="text-cyan-400 text-sm font-bold bg-cyan-950/30 px-3 py-1 rounded-lg border border-cyan-500/20">
-                                {item.achievement}
-                            </span>
+                            <span className="text-cyan-400 text-sm font-bold bg-cyan-950/30 px-3 py-1 rounded-lg border border-cyan-500/20">{item.achievement}</span>
                         </div>
-                        
                         <div className="relative">
                             <Quote size={20} className="text-slate-700 absolute -top-1 -right-2 transform scale-x-[-1]" />
-                            <p className="text-slate-400 text-sm leading-relaxed pr-6">
-                                {item.text}
-                            </p>
+                            <p className="text-slate-400 text-sm leading-relaxed pr-6">{item.text}</p>
                         </div>
                     </div>
                 </motion.div>
@@ -289,57 +246,28 @@ export default function DvirMoskovichNewPage() {
         </div>
       </section>
 
-      {/* Footer Area */}
+      {/* Footer */}
       <footer className="pt-40 pb-20 px-6 text-center relative z-10 border-t border-white/5 bg-[#030304] overflow-hidden">
-        
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-cyan-900/20 blur-[150px] rounded-full pointer-events-none opacity-50"></div>
-
         <div className="max-w-5xl mx-auto relative z-10">
-          
-          <h2 className="text-4xl md:text-7xl font-black mb-16 tracking-tight leading-tight">
-            מוכן לגרסה <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-400 animate-pulse-slow">
-                הכי טובה שלך?
-            </span>
-          </h2>
-          
-          {/* Social Icons - FIXED BLACK BACKGROUND */}
+          <h2 className="text-4xl md:text-7xl font-black mb-16 tracking-tight leading-tight">מוכן לגרסה <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-400 animate-pulse-slow">הכי טובה שלך?</span></h2>
           <div className="flex justify-center gap-6 mb-24">
             {socialLinks.map((social, i) => (
-              <a 
-                key={i} 
-                href={social.link} 
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`w-20 h-20 flex items-center justify-center bg-black rounded-[24px] border border-white/10 transition-all duration-300 hover:scale-105 hover:-translate-y-1 ${social.styles}`}
-              >
+              <a key={i} href={social.link} target="_blank" rel="noopener noreferrer" className={`w-20 h-20 flex items-center justify-center bg-black rounded-[24px] border border-white/10 transition-all duration-300 hover:scale-105 hover:-translate-y-1 ${social.styles}`}>
                 {social.icon}
               </a>
             ))}
           </div>
-
-          {/* Text Logo */}
           <div className="flex flex-col items-center gap-12 mt-16">
-            
-            <motion.div 
-              whileHover={{ scale: 1.05 }}
-              className="relative z-10 cursor-default select-none"
-            >
+            <motion.div whileHover={{ scale: 1.05 }} className="relative z-10 cursor-default select-none">
                 <h3 className="text-4xl md:text-[75px] font-black tracking-tightest uppercase leading-none text-center">
-                    <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-300 to-blue-500 filter drop-shadow-[0_0_20px_rgba(34,211,238,0.5)]">
-                        DVIR
-                    </span>
-                    <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-300 to-white filter drop-shadow-[0_0_20px_rgba(34,211,238,0.5)]">
-                        MOSKOWITZ
-                    </span>
+                    <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-300 to-blue-500 filter drop-shadow-[0_0_20px_rgba(34,211,238,0.5)]">DVIR</span>
+                    <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-300 to-white filter drop-shadow-[0_0_20px_rgba(34,211,238,0.5)]">MOSKOWITZ</span>
                 </h3>
             </motion.div>
-
             <div className="flex flex-col gap-5 mt-10">
               <div className="h-px w-32 bg-gradient-to-r from-transparent via-slate-600 to-transparent mx-auto opacity-50"></div>
-              <p className="text-slate-500 font-bold text-xs tracking-[0.4em] uppercase">
-                BUILT BY IDAN ROTS • 2026
-              </p>
+              <p className="text-slate-500 font-bold text-xs tracking-[0.4em] uppercase">BUILT BY IDAN ROTS • 2026</p>
             </div>
           </div>
         </div>
