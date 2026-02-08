@@ -9,8 +9,6 @@ import {
   Smartphone,
   Dumbbell,
   ClipboardList,
-  Target,
-  Zap,
   Quote
 } from "lucide-react";
 
@@ -39,7 +37,7 @@ export default function DvirMoskovichNewPage() {
     {
       id: 1,
       name: "עמית ר.",
-      achievement: "חיטוב ועליה במסה",
+      achievement: "ירידה של 18 ק״ג",
       text: "חשבתי שניסיתי הכל, אבל השיטה של דביר הוכיחה לי שאפשר אחרת. האנרגיות שלי בשמיים.",
       imgBefore: "/before2.jpeg", 
       imgAfter: "/after2.jpeg"   
@@ -55,10 +53,10 @@ export default function DvirMoskovichNewPage() {
     {
       id: 3,
       name: "רועי מ.",
-      achievement: "ירידה של 10 ק״ג",
+      achievement: "הכנה לתחרות",
       text: "מקצוענות ברמה הכי גבוהה שיש. הדיוק בתזונה ובאימונים הביא אותי לשיא של החיים שלי.",
-      imgBefore: "/before3.jpeg",
-      imgAfter: "/after3.jpeg"
+      imgBefore: "/api/placeholder/300/400",
+      imgAfter: "/api/placeholder/300/400"
     }
   ];
 
@@ -160,12 +158,20 @@ export default function DvirMoskovichNewPage() {
             <div className="relative aspect-[4/5] w-full max-w-[90%] rounded-[2rem] bg-gradient-to-b from-[#1a1a20] to-[#0a0a0c] overflow-hidden border border-white/10 shadow-2xl group">
                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(34,211,238,0.15),transparent_70%)] z-10 pointer-events-none" />
                <img src="/dvir.jpeg" alt="דביר מוסקוביץ" className="absolute inset-0 w-full h-full object-cover z-0" />
+               <div className="absolute bottom-8 left-8 right-8 bg-black/60 backdrop-blur-xl border border-white/10 p-4 rounded-2xl flex items-center gap-4 z-20">
+                    <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center text-green-400">
+                        <Trophy size={20} />
+                    </div>
+                    <div>
+                        <p className="text-sm font-bold text-white">מקצוענות מוכחת</p>
+                    </div>
+               </div>
             </div>
           </motion.div>
         </div>
       </header>
 
-      {/* About Me Section - UPDATED TEXT */}
+      {/* About Me Section */}
       <section className="py-12 relative z-10">
         <div className="max-w-4xl mx-auto px-6">
           <div className="bg-gradient-to-br from-white/[0.05] to-transparent border border-white/10 rounded-[2rem] p-10 md:p-14 text-center backdrop-blur-md relative overflow-hidden">
@@ -175,7 +181,7 @@ export default function DvirMoskovichNewPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">נעים להכיר, <span className="text-cyan-400">דביר.</span></h2>
             
             <p className="text-slate-300 text-lg md:text-xl leading-loose font-light">
-              אני חי את עולם הכושר כבר למעלה מעשור, עם ניסיון עשיר בליווי מתאמנים ורזומה תחרותי בעולם פיתוח הגוף.
+              אני חי את עולם הברזל כבר למעלה מעשור, עם ניסיון עשיר בליווי מתאמנים ורזומה תחרותי בעולם פיתוח הגוף.
               הדרך שעברתי לימדה אותי שאין קיצורי דרך – רק דיוק, התמדה ומדע.
               אני כאן כדי להעביר את הידע הזה אליכם, ולבנות יחד את הגרסה הכי חזקה ואסתטית שלכם.
             </p>
@@ -265,9 +271,16 @@ export default function DvirMoskovichNewPage() {
                     <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-300 to-white filter drop-shadow-[0_0_20px_rgba(34,211,238,0.5)]">MOSKOWITZ</span>
                 </h3>
             </motion.div>
+            
+            {/* Updated Footer Credit Section */}
             <div className="flex flex-col gap-5 mt-10">
               <div className="h-px w-32 bg-gradient-to-r from-transparent via-slate-600 to-transparent mx-auto opacity-50"></div>
-              <p className="text-slate-500 font-bold text-xs tracking-[0.4em] uppercase">BUILT BY IDAN ROTS • 2026</p>
+              <p className="text-slate-500 font-bold text-[11px] tracking-[0.25em] uppercase">
+                BUILT BY IDAN ROTSHTEIN • {' '}
+                <a href="https://www.instagram.com/idanrots" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors">
+                  @idanrots
+                </a> • 2026
+              </p>
             </div>
           </div>
         </div>
