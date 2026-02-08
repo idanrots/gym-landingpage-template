@@ -39,7 +39,7 @@ export default function DvirMoskovichNewPage() {
     {
       id: 1,
       name: "עמית ר.",
-      achievement: "ירידה של 18 ק״ג",
+      achievement: "חיטוב ועליה במסה",
       text: "חשבתי שניסיתי הכל, אבל השיטה של דביר הוכיחה לי שאפשר אחרת. האנרגיות שלי בשמיים.",
       imgBefore: "/before2.jpeg", 
       imgAfter: "/after2.jpeg"   
@@ -55,10 +55,10 @@ export default function DvirMoskovichNewPage() {
     {
       id: 3,
       name: "רועי מ.",
-      achievement: "הכנה לתחרות",
+      achievement: "ירידה של 10 ק״ג",
       text: "מקצוענות ברמה הכי גבוהה שיש. הדיוק בתזונה ובאימונים הביא אותי לשיא של החיים שלי.",
-      imgBefore: "/api/placeholder/300/400",
-      imgAfter: "/api/placeholder/300/400"
+      imgBefore: "/before3.jpeg",
+      imgAfter: "/after3.jpeg"
     }
   ];
 
