@@ -1,139 +1,339 @@
 "use client";
 import React from 'react';
-import Image from 'next/image'; // ייבוא רכיב התמונה הממוטב
 import { motion } from 'framer-motion';
 import { 
   ArrowLeft, 
   Instagram, 
-  Youtube, 
   MessageCircle, 
-  Star, 
-  Trophy, 
-  Users, 
-  Zap, 
+  Trophy,
   Target,
-  Activity
+  Zap,
+  Quote
 } from "lucide-react";
 
-export default function DvirMoskovichOptimized() {
+// אייקון טיקטוק מקורי ומדויק
+const TikTokIcon = ({ size = 28, color = "currentColor" }) => (
+  <svg 
+    width={size} 
+    height={size} 
+    viewBox="0 0 24 24" 
+    fill={color}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 10.692 6.33 6.33 0 0 0 10.857-4.424V8.687a8.182 8.182 0 0 0 4.773 1.526V6.79a4.831 4.831 0 0 1-1.003-.104z"/>
+  </svg>
+);
+
+export default function DvirMoskovichNewPage() {
   
+  // הגדרת הקישורים
+  const whatsappLink = "https://wa.me/972525282795";
+  const instagramLink = "https://www.instagram.com/dvir_moskowitz8?igsh=ZHEwcHNlZGJrOWlj&utm_source=qr";
+  const tiktokLink = "https://www.tiktok.com/@dvir_moskowitz?_r=1&_t=ZS-93daRjEZkpR";
+
+  // נתונים לסקשן המהפכים
+  const transformations = [
+    {
+      id: 1,
+      name: "עמית ר.",
+      achievement: "ירידה של 18 ק״ג",
+      text: "חשבתי שניסיתי הכל, אבל השיטה של דביר הוכיחה לי שאפשר אחרת. האנרגיות שלי בשמיים.",
+      imgBefore: "/api/placeholder/300/400", 
+      imgAfter: "/api/placeholder/300/400"   
+    },
+    {
+      id: 2,
+      name: "דניאל ק.",
+      achievement: "חיטוב ועליה במסה",
+      text: "לא רק הגוף השתנה, אלא כל הביטחון העצמי שלי. דביר לא מוותר לך, וזה בדיוק מה שהייתי צריך.",
+      imgBefore: "/api/placeholder/300/400",
+      imgAfter: "/api/placeholder/300/400"
+    },
+    {
+      id: 3,
+      name: "רועי מ.",
+      achievement: "הכנה לתחרות",
+      text: "מקצוענות ברמה הכי גבוהה שיש. הדיוק בתזונה ובאימונים הביא אותי לשיא של החיים שלי.",
+      imgBefore: "/api/placeholder/300/400",
+      imgAfter: "/api/placeholder/300/400"
+    }
+  ];
+
+  // רשימת האייקונים - רקע שחור מלא
+  const socialLinks = [
+    { 
+      // וואטסאפ - ירוק
+      icon: <MessageCircle size={28} />, 
+      link: whatsappLink,
+      styles: "border-green-500 text-green-500 shadow-[0_0_20px_-5px_rgba(34,197,94,0.3)] hover:shadow-[0_0_30px_-5px_rgba(34,197,94,0.6)]"
+    },
+    { 
+      // טיקטוק - תכלת/ציאן
+      icon: <TikTokIcon size={24} />, 
+      link: tiktokLink, 
+      styles: "border-cyan-400 text-cyan-400 shadow-[0_0_20px_-5px_rgba(34,211,238,0.3)] hover:shadow-[0_0_30px_-5px_rgba(34,211,238,0.6)]"
+    },
+    { 
+      // אינסטגרם - ורוד
+      icon: <Instagram size={28} />, 
+      link: instagramLink,
+      styles: "border-pink-500 text-pink-500 shadow-[0_0_20px_-5px_rgba(236,72,153,0.3)] hover:shadow-[0_0_30px_-5px_rgba(236,72,153,0.6)]"
+    }
+  ];
+
   return (
-    <div dir="rtl" className="min-h-screen bg-[#050505] text-white font-sans selection:bg-blue-500 overflow-x-hidden">
+    <div dir="rtl" className="min-h-screen bg-[#050507] text-slate-100 font-sans selection:bg-cyan-500/30 overflow-x-hidden scroll-smooth">
       
-      {/* Background Glows - Reduced for Mobile Performance */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[-5%] left-[-5%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-blue-600/10 blur-[80px] md:blur-[150px] rounded-full" />
+      {/* Background Elements */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-cyan-900/10 blur-[120px] rounded-full mix-blend-screen" />
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-900/10 blur-[120px] rounded-full mix-blend-screen" />
       </div>
 
+      {/* Navbar - Sticky */}
+      <nav className="fixed top-0 w-full z-50 border-b border-white/5 bg-[#050507]/80 backdrop-blur-md transition-all duration-300">
+        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            
+            {/* Logo Area */}
+            <div className="flex items-center gap-3 cursor-pointer group">
+                <div className="w-10 h-10 rounded-full bg-white overflow-hidden p-0.5 border border-cyan-500/30 shadow-[0_0_15px_rgba(6,182,212,0.2)] group-hover:shadow-[0_0_25px_rgba(6,182,212,0.4)] transition-all">
+                     <img src="/logo.jpeg" alt="Logo" className="w-full h-full object-cover" />
+                </div>
+            </div>
+
+            {/* Buttons Area */}
+            <div className="flex items-center">
+                <a 
+                  href={whatsappLink} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-6 py-2.5 rounded-full bg-cyan-500 hover:bg-cyan-400 text-black font-bold text-sm transition-all shadow-[0_0_20px_-5px_rgba(6,182,212,0.5)] hover:shadow-[0_0_25px_-5px_rgba(6,182,212,0.8)] hover:scale-105 active:scale-95"
+                >
+                    <span>בוא נתחיל</span>
+                    <ArrowLeft size={16} />
+                </a>
+            </div>
+        </div>
+      </nav>
+
       {/* Hero Section */}
-      <header className="relative min-h-screen flex items-center justify-center pt-10 md:pt-20 px-6">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <header className="relative min-h-screen flex items-center justify-center pt-20 px-6 z-10">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="z-10 text-right order-2 md:order-1"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-right order-2 lg:order-1"
           >
-            <span className="inline-block px-4 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] md:text-xs font-black uppercase tracking-widest mb-6">
-              Premium Personal Coaching
-            </span>
-            <h1 className="text-5xl md:text-8xl font-black mb-6 leading-tight italic uppercase">
-              דביר <br />
-              <span className="text-blue-500">מוסקוביץ</span>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-950/30 border border-cyan-500/20 mb-8 backdrop-blur-sm">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+              </span>
+              <span className="text-cyan-400 font-bold tracking-wider uppercase text-[11px]">דביר מוסקוביץ</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-6xl lg:text-[75px] font-black mb-6 leading-[1.1] tracking-tight">
+              הגרסה הכי חזקה <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-l from-white via-slate-300 to-slate-500">
+                שאי פעם הייתה לך
+              </span>
             </h1>
-            <p className="text-lg md:text-xl text-zinc-400 max-w-lg mb-10 leading-relaxed font-light">
-              מאמן כושר ומומחה לשינוי פיזי ומנטלי. אני בונה אנשים חזקים יותר, בטוחים יותר וממוקדים יותר.
+
+            <p className="text-lg md:text-xl text-slate-400 max-w-lg mb-10 font-light leading-relaxed">
+              זה לא רק המשקל על המוט, זה הביטחון מול המראה. בוא נשבור את הגבולות המנטליים שלך ונבנה גוף שאי אפשר להתעלם ממנו.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-6 items-center">
-              <a href="https://wa.me/yournumber" className="w-full sm:w-auto h-14 px-10 bg-white text-black font-black rounded-full flex items-center justify-center gap-3 hover:bg-blue-500 hover:text-white transition-all shadow-lg shadow-white/5">
-                בואי נתחיל תהליך
-                <ArrowLeft className="w-5 h-5" />
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a 
+                 href={whatsappLink} 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 className="group relative overflow-hidden px-8 py-4 bg-white text-black rounded-xl font-bold transition-all hover:shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)] hover:scale-[1.02] flex items-center justify-center gap-3"
+              >
+                <span>בוא נתחיל לעבוד</span>
+                <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
               </a>
-              <div className="flex items-center gap-3">
-                <span className="text-sm font-bold text-zinc-500 underline underline-offset-4 decoration-blue-500">+400 לקוחות מרוצים</span>
-              </div>
+              
+              <a href="#results" className="px-8 py-4 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md hover:bg-white/10 transition-all font-medium text-slate-300 hover:text-white flex items-center justify-center">
+                צפה בתוצאות
+              </a>
             </div>
           </motion.div>
 
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative aspect-[4/5] md:aspect-[3/4] bg-zinc-900 rounded-[2.5rem] overflow-hidden border border-white/5 shadow-2xl order-1 md:order-2"
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+            className="relative order-1 lg:order-2 flex justify-center" // הוספתי flex justify-center
           >
-            {/* החלף את ה-src לנתיב התמונה שלך בתיקיית public */}
-            <div className="absolute inset-0 flex items-center justify-center text-zinc-700 italic">
-               <span className="text-xs uppercase tracking-widest">Dvir Profile Photo</span>
+            {/* הוספתי max-w-[90%] כדי להקטין את התמונה */}
+            <div className="relative aspect-[4/5] w-full max-w-[90%] rounded-[2rem] bg-gradient-to-b from-[#1a1a20] to-[#0a0a0c] overflow-hidden border border-white/10 shadow-2xl group">
+               {/* תאורה אחורית לתמונה */}
+               <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(34,211,238,0.15),transparent_70%)] z-10 pointer-events-none" />
+               
+               {/* התמונה של דביר */}
+               <img 
+                    src="/dvir.jpeg" 
+                    alt="דביר מוסקוביץ" 
+                    className="absolute inset-0 w-full h-full object-cover z-0" 
+               />
+               
+               {/* התגית הצפה */}
+               <div className="absolute bottom-8 left-8 right-8 bg-black/60 backdrop-blur-xl border border-white/10 p-4 rounded-2xl flex items-center gap-4 z-20">
+                    <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center text-green-400">
+                        <Trophy size={20} />
+                    </div>
+                    <div>
+                        <p className="text-sm font-bold text-white">מקצוענות מוכחת</p>
+                    </div>
+               </div>
             </div>
-            {/* דוגמה לשימוש נכון: <Image src="/dvir.jpg" alt="Dvir" fill className="object-cover" priority /> */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
           </motion.div>
         </div>
       </header>
 
-      {/* Results Section - ממוטב לנייד */}
-      <section className="py-24 md:py-32">
-        <div className="max-w-7xl mx-auto px-6 text-right">
-          <h2 className="text-4xl md:text-5xl font-black italic mb-16 uppercase">הוכחות <span className="text-blue-500">בשטח</span></h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
-            {[1, 2, 3].map((item) => (
+      {/* Services Section */}
+      <section className="py-24 px-6 relative z-10">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">השיטה שלי</h2>
+            <div className="h-1 w-20 bg-cyan-500 mx-auto rounded-full opacity-50"></div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { title: "תוכנית אימונים", icon: <Zap />, desc: "אסטרטגיה מותאמת אישית שדוחפת אותך לקצה היכולת." },
+              { title: "ליווי תזונתי", icon: <Target />, desc: "דיוק קלורי ומקרוז כדי לתדלק את הביצועים שלך." },
+              { title: "מנטליות של ברזל", icon: <Trophy />, desc: "שינוי תודעתי שמוביל לתוצאות שנשמרות לאורך זמן." }
+            ].map((item, idx) => (
               <motion.div 
-                key={item} 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                className="space-y-6 group"
+                key={idx}
+                whileHover={{ y: -5 }}
+                className="p-8 rounded-3xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] hover:border-cyan-500/20 transition-all duration-300 group"
               >
-                <div className="aspect-[3/4] bg-zinc-900 rounded-[2rem] overflow-hidden border border-white/5 relative shadow-xl">
-                   <div className="absolute bottom-6 inset-x-6 flex justify-between z-10">
-                      <span className="px-4 py-1 bg-black/60 backdrop-blur-md rounded-full text-[10px] font-bold border border-white/10">לפני</span>
-                      <span className="px-4 py-1 bg-blue-500 rounded-full text-[10px] font-black italic shadow-lg shadow-blue-500/40">אחרי</span>
-                   </div>
-                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
+                <div className="w-12 h-12 mb-6 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/5 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
+                  {item.icon}
                 </div>
-                <div className="px-2">
-                  <div className="flex text-blue-500 mb-3">
-                    {[1,2,3,4,5].map(s => <Star key={s} size={14} fill="currentColor" />)}
-                  </div>
-                  <p className="text-md font-bold leading-snug text-zinc-200">"התהליך עם דביר שינה לי את התפיסה על מה אני מסוגלת לעשות."</p>
-                </div>
+                <h3 className="text-xl font-bold mb-3 text-slate-200">{item.title}</h3>
+                <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Footer / Socials */}
-      <footer id="contact" className="py-24 border-t border-white/5 bg-gradient-to-b from-transparent to-blue-900/5">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-5xl md:text-6xl font-black italic mb-12 uppercase tracking-tighter">הגיע הזמן <span className="text-blue-500">שלך.</span></h2>
+      {/* Before & After Section */}
+      <section id="results" className="py-24 relative z-10 bg-white/[0.02] border-y border-white/5">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">תוצאות מדברות</h2>
+            <p className="text-slate-400 max-w-2xl mx-auto">בלי תירוצים, בלי קיצורי דרך. רק עבודה קשה ותוצאות שנשארות.</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {transformations.map((item) => (
+                <motion.div 
+                    key={item.id}
+                    whileHover={{ y: -5 }}
+                    className="bg-[#0a0a0c] border border-white/10 rounded-3xl overflow-hidden hover:border-cyan-500/30 transition-all duration-500 shadow-2xl"
+                >
+                    {/* Images Container */}
+                    <div className="flex h-64 relative">
+                        {/* Before Image */}
+                        <div className="w-1/2 relative border-l border-white/10 bg-slate-800">
+                             {/* Replace src with real image */}
+                            <div className="absolute inset-0 bg-slate-800 flex items-center justify-center text-slate-600 text-xs">תמונה</div>
+                            <div className="absolute top-3 right-3 bg-black/60 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold text-slate-300 border border-white/10">
+                                לפני
+                            </div>
+                        </div>
+                        {/* After Image */}
+                        <div className="w-1/2 relative bg-slate-700">
+                            {/* Replace src with real image */}
+                            <div className="absolute inset-0 bg-slate-700 flex items-center justify-center text-slate-500 text-xs">תמונה</div>
+                            <div className="absolute top-3 left-3 bg-cyan-500/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold text-black shadow-[0_0_15px_rgba(6,182,212,0.4)]">
+                                אחרי
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Content Container */}
+                    <div className="p-8 text-right">
+                        <div className="flex justify-between items-start mb-4">
+                            <h3 className="text-xl font-bold text-white">{item.name}</h3>
+                            <span className="text-cyan-400 text-sm font-bold bg-cyan-950/30 px-3 py-1 rounded-lg border border-cyan-500/20">
+                                {item.achievement}
+                            </span>
+                        </div>
+                        
+                        <div className="relative">
+                            <Quote size={20} className="text-slate-700 absolute -top-1 -right-2 transform scale-x-[-1]" />
+                            <p className="text-slate-400 text-sm leading-relaxed pr-6">
+                                {item.text}
+                            </p>
+                        </div>
+                    </div>
+                </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Footer Area */}
+      <footer className="pt-40 pb-20 px-6 text-center relative z-10 border-t border-white/5 bg-[#030304] overflow-hidden">
+        
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-cyan-900/20 blur-[150px] rounded-full pointer-events-none opacity-50"></div>
+
+        <div className="max-w-5xl mx-auto relative z-10">
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-20">
-            {[
-              { label: "WhatsApp", icon: <MessageCircle size={24} />, color: "hover:bg-green-600", link: "#" },
-              { label: "Instagram", icon: <Instagram size={24} />, color: "hover:bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-600", link: "#" },
-              { label: "YouTube", icon: <Youtube size={24} />, color: "hover:bg-red-600", link: "#" },
-              { label: "TikTok", icon: (
-                <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 md:w-6 md:h-6">
-                  <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.89-.6-4.13-1.47V18.77a6.738 6.738 0 01-10.74 5.39 6.74 6.74 0 012.31-11.41c.48-.12.98-.18 1.48-.19v4.1c-.42.02-.85.12-1.23.3-.96.44-1.5 1.54-1.28 2.57.22 1.02 1.18 1.75 2.22 1.73 1.15-.02 2.13-.93 2.17-2.08V0h.24z"/>
-                </svg>
-              ), color: "hover:bg-[#010101] hover:shadow-[0_0_15px_rgba(255,0,80,0.4),0_0_15px_rgba(0,242,234,0.4)]", link: "#" }
-            ].map((soc, i) => (
-              <a key={i} href={soc.link} target="_blank" className={`flex flex-col items-center p-6 md:p-8 bg-zinc-900/40 backdrop-blur-sm rounded-3xl border border-white/5 ${soc.color} transition-all duration-300 group`}>
-                <div className="mb-3 md:mb-4 group-hover:scale-110 transition-transform">{soc.icon}</div>
-                <span className="text-[9px] md:text-[10px] font-black uppercase tracking-widest">{soc.label}</span>
+          <h2 className="text-4xl md:text-7xl font-black mb-16 tracking-tight leading-tight">
+            מוכן לגרסה <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-400 animate-pulse-slow">
+                הכי טובה שלך?
+            </span>
+          </h2>
+          
+          {/* Social Icons - FIXED BLACK BACKGROUND */}
+          <div className="flex justify-center gap-6 mb-24">
+            {socialLinks.map((social, i) => (
+              <a 
+                key={i} 
+                href={social.link} 
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`w-20 h-20 flex items-center justify-center bg-black rounded-[24px] border border-white/10 transition-all duration-300 hover:scale-105 hover:-translate-y-1 ${social.styles}`}
+              >
+                {social.icon}
               </a>
             ))}
           </div>
 
-          <div className="pt-10 border-t border-white/5 space-y-4">
-             <div className="text-2xl font-black italic tracking-tighter opacity-80">DVIR MOSKOVICH</div>
-             <p className="text-zinc-700 text-[8px] font-bold uppercase tracking-[0.4em]">Engineered by Idan Rots / 2026</p>
+          {/* Text Logo */}
+          <div className="flex flex-col items-center gap-12 mt-16">
+            
+            <motion.div 
+              whileHover={{ scale: 1.05 }}
+              className="relative z-10 cursor-default select-none"
+            >
+                <h3 className="text-4xl md:text-[75px] font-black tracking-tightest uppercase leading-none text-center">
+                    <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-300 to-blue-500 filter drop-shadow-[0_0_20px_rgba(34,211,238,0.5)]">
+                        DVIR
+                    </span>
+                    <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-300 to-white filter drop-shadow-[0_0_20px_rgba(34,211,238,0.5)]">
+                        MOSKOWITZ
+                    </span>
+                </h3>
+            </motion.div>
+
+            <div className="flex flex-col gap-5 mt-10">
+              <div className="h-px w-32 bg-gradient-to-r from-transparent via-slate-600 to-transparent mx-auto opacity-50"></div>
+              <p className="text-slate-500 font-bold text-xs tracking-[0.4em] uppercase">
+                BUILT BY IDAN ROTS • 2026
+              </p>
+            </div>
           </div>
         </div>
       </footer>

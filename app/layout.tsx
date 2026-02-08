@@ -33,3 +33,11 @@ export default function RootLayout({
     </html>
   );
 }
+
+import { Heebo } from 'next/font/google';
+
+const heebo = Heebo({ 
+  subsets: ['hebrew', 'latin'],
+  weight: ['300', '700', '900'],
+  display: 'swap',
+});
