@@ -5,11 +5,11 @@ import {
   ArrowLeft, 
   Instagram, 
   MessageCircle, 
-  Trophy,
   Smartphone,
   Dumbbell,
   ClipboardList,
-  Quote
+  Quote,
+  Trophy // השארתי לייבוא למקרה הצורך
 } from "lucide-react";
 
 // אייקון טיקטוק מקורי ומדויק
@@ -32,12 +32,12 @@ export default function DvirMoskovichNewPage() {
   const instagramLink = "https://www.instagram.com/dvir_moskowitz8?igsh=ZHEwcHNlZGJrOWlj&utm_source=qr";
   const tiktokLink = "https://www.tiktok.com/@dvir_moskowitz?_r=1&_t=ZS-93daRjEZkpR";
 
-  // נתונים לסקשן המהפכים
+  // נתונים לסקשן המהפכים - מעודכן עם כל 3 הסטים של התמונות
   const transformations = [
     {
       id: 1,
       name: "עמית ר.",
-      achievement: "ירידה של 18 ק״ג",
+      achievement: "חיטוב ועליה במסה",
       text: "חשבתי שניסיתי הכל, אבל השיטה של דביר הוכיחה לי שאפשר אחרת. האנרגיות שלי בשמיים.",
       imgBefore: "/before2.jpeg", 
       imgAfter: "/after2.jpeg"   
@@ -53,14 +53,13 @@ export default function DvirMoskovichNewPage() {
     {
       id: 3,
       name: "רועי מ.",
-      achievement: "הכנה לתחרות",
+      achievement: "ירידה של 10 ק״ג",
       text: "מקצוענות ברמה הכי גבוהה שיש. הדיוק בתזונה ובאימונים הביא אותי לשיא של החיים שלי.",
-      imgBefore: "/api/placeholder/300/400",
-      imgAfter: "/api/placeholder/300/400"
+      imgBefore: "/before3.jpeg", // תמונה חדשה
+      imgAfter: "/after3.jpeg"    // תמונה חדשה
     }
   ];
 
-  // רשימת האייקונים - רקע שחור מלא
   const socialLinks = [
     { 
       icon: <MessageCircle size={28} />, 
@@ -79,7 +78,6 @@ export default function DvirMoskovichNewPage() {
     }
   ];
 
-  // הגדרת השירותים (הקוביות)
   const services = [
     { 
       title: "ליווי אונליין", 
@@ -158,30 +156,22 @@ export default function DvirMoskovichNewPage() {
             <div className="relative aspect-[4/5] w-full max-w-[90%] rounded-[2rem] bg-gradient-to-b from-[#1a1a20] to-[#0a0a0c] overflow-hidden border border-white/10 shadow-2xl group">
                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(34,211,238,0.15),transparent_70%)] z-10 pointer-events-none" />
                <img src="/dvir.jpeg" alt="דביר מוסקוביץ" className="absolute inset-0 w-full h-full object-cover z-0" />
-               <div className="absolute bottom-8 left-8 right-8 bg-black/60 backdrop-blur-xl border border-white/10 p-4 rounded-2xl flex items-center gap-4 z-20">
-                    <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center text-green-400">
-                        <Trophy size={20} />
-                    </div>
-                    <div>
-                        <p className="text-sm font-bold text-white">מקצוענות מוכחת</p>
-                    </div>
-               </div>
+               {/* אין יותר בועה צפה על התמונה */}
             </div>
           </motion.div>
         </div>
       </header>
 
-      {/* About Me Section */}
+      {/* About Me Section - FIRST */}
       <section className="py-12 relative z-10">
         <div className="max-w-4xl mx-auto px-6">
           <div className="bg-gradient-to-br from-white/[0.05] to-transparent border border-white/10 rounded-[2rem] p-10 md:p-14 text-center backdrop-blur-md relative overflow-hidden">
-            {/* אלמנט דקורטיבי זוהר */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50"></div>
             
             <h2 className="text-3xl md:text-4xl font-bold mb-6">נעים להכיר, <span className="text-cyan-400">דביר.</span></h2>
             
             <p className="text-slate-300 text-lg md:text-xl leading-loose font-light">
-              אני חי את עולם הברזל כבר למעלה מעשור, עם ניסיון עשיר בליווי מתאמנים ורזומה תחרותי בעולם פיתוח הגוף.
+              אני חי את עולם הכושר כבר למעלה מעשור, עם ניסיון עשיר בליווי מתאמנים ורזומה תחרותי בעולם פיתוח הגוף.
               הדרך שעברתי לימדה אותי שאין קיצורי דרך – רק דיוק, התמדה ומדע.
               אני כאן כדי להעביר את הידע הזה אליכם, ולבנות יחד את הגרסה הכי חזקה ואסתטית שלכם.
             </p>
@@ -189,7 +179,7 @@ export default function DvirMoskovichNewPage() {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Services Section - SECOND */}
       <section className="py-24 px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -256,7 +246,7 @@ export default function DvirMoskovichNewPage() {
       <footer className="pt-40 pb-20 px-6 text-center relative z-10 border-t border-white/5 bg-[#030304] overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-cyan-900/20 blur-[150px] rounded-full pointer-events-none opacity-50"></div>
         <div className="max-w-5xl mx-auto relative z-10">
-          <h2 className="text-4xl md:text-7xl font-black mb-16 tracking-tight leading-tight">מוכן לגרסה <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-400 animate-pulse-slow">הכי טובה שלך?</span></h2>
+          <h2 className="text-4xl md:text-7xl font-black mb-16 tracking-tight leading-tight">מוכן להפוך לגרסה <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-400 animate-pulse-slow">הכי טובה שלך?</span></h2>
           <div className="flex justify-center gap-6 mb-24">
             {socialLinks.map((social, i) => (
               <a key={i} href={social.link} target="_blank" rel="noopener noreferrer" className={`w-20 h-20 flex items-center justify-center bg-black rounded-[24px] border border-white/10 transition-all duration-300 hover:scale-105 hover:-translate-y-1 ${social.styles}`}>
@@ -271,15 +261,13 @@ export default function DvirMoskovichNewPage() {
                     <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-300 to-white filter drop-shadow-[0_0_20px_rgba(34,211,238,0.5)]">MOSKOWITZ</span>
                 </h3>
             </motion.div>
-            
-            {/* Updated Footer Credit Section */}
             <div className="flex flex-col gap-5 mt-10">
               <div className="h-px w-32 bg-gradient-to-r from-transparent via-slate-600 to-transparent mx-auto opacity-50"></div>
               <p className="text-slate-500 font-bold text-[11px] tracking-[0.25em] uppercase">
-                BUILT BY IDAN ROTSHTEIN • {' '}
+                BUILT BY IDAN ROTSHTEIN • 2026 • {' '}
                 <a href="https://www.instagram.com/idanrots" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors">
-                  @idanrots
-                </a> • 2026
+                  @IDANROTS
+                </a>
               </p>
             </div>
           </div>
