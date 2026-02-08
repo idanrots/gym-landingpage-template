@@ -31,31 +31,31 @@ export default function DvirMoskovichNewPage() {
   const instagramLink = "https://www.instagram.com/dvir_moskowitz8?igsh=ZHEwcHNlZGJrOWlj&utm_source=qr";
   const tiktokLink = "https://www.tiktok.com/@dvir_moskowitz?_r=1&_t=ZS-93daRjEZkpR";
 
-  // נתונים לסקשן המהפכים
+  // נתונים לסקשן המהפכים - מעודכן עם התמונות החדשות
   const transformations = [
     {
       id: 1,
       name: "עמית ר.",
       achievement: "ירידה של 18 ק״ג",
       text: "חשבתי שניסיתי הכל, אבל השיטה של דביר הוכיחה לי שאפשר אחרת. האנרגיות שלי בשמיים.",
-      imgBefore: "/api/placeholder/300/400", 
-      imgAfter: "/api/placeholder/300/400"   
+      imgBefore: "/before2.jpeg",  // תמונה חדשה
+      imgAfter: "/after2.jpeg"     // תמונה חדשה
     },
     {
       id: 2,
       name: "דניאל ק.",
       achievement: "חיטוב ועליה במסה",
       text: "לא רק הגוף השתנה, אלא כל הביטחון העצמי שלי. דביר לא מוותר לך, וזה בדיוק מה שהייתי צריך.",
-      imgBefore: "/api/placeholder/300/400",
-      imgAfter: "/api/placeholder/300/400"
+      imgBefore: "/before1.png",   // תמונה חדשה (שים לב שזה PNG)
+      imgAfter: "/after1.jpeg"     // תמונה חדשה
     },
     {
       id: 3,
       name: "רועי מ.",
       achievement: "הכנה לתחרות",
       text: "מקצוענות ברמה הכי גבוהה שיש. הדיוק בתזונה ובאימונים הביא אותי לשיא של החיים שלי.",
-      imgBefore: "/api/placeholder/300/400",
-      imgAfter: "/api/placeholder/300/400"
+      imgBefore: "/api/placeholder/300/400", // נשאר כטמפלייט
+      imgAfter: "/api/placeholder/300/400"    // נשאר כטמפלייט
     }
   ];
 
@@ -167,9 +167,8 @@ export default function DvirMoskovichNewPage() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
-            className="relative order-1 lg:order-2 flex justify-center" // הוספתי flex justify-center
+            className="relative order-1 lg:order-2 flex justify-center"
           >
-            {/* הוספתי max-w-[90%] כדי להקטין את התמונה */}
             <div className="relative aspect-[4/5] w-full max-w-[90%] rounded-[2rem] bg-gradient-to-b from-[#1a1a20] to-[#0a0a0c] overflow-hidden border border-white/10 shadow-2xl group">
                {/* תאורה אחורית לתמונה */}
                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(34,211,238,0.15),transparent_70%)] z-10 pointer-events-none" />
@@ -245,7 +244,11 @@ export default function DvirMoskovichNewPage() {
                         {/* Before Image */}
                         <div className="w-1/2 relative border-l border-white/10 bg-slate-800">
                              {/* Replace src with real image */}
-                            <div className="absolute inset-0 bg-slate-800 flex items-center justify-center text-slate-600 text-xs">תמונה</div>
+                            <img 
+                                src={item.imgBefore} 
+                                alt="לפני" 
+                                className="absolute inset-0 w-full h-full object-cover"
+                            />
                             <div className="absolute top-3 right-3 bg-black/60 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold text-slate-300 border border-white/10">
                                 לפני
                             </div>
@@ -253,7 +256,11 @@ export default function DvirMoskovichNewPage() {
                         {/* After Image */}
                         <div className="w-1/2 relative bg-slate-700">
                             {/* Replace src with real image */}
-                            <div className="absolute inset-0 bg-slate-700 flex items-center justify-center text-slate-500 text-xs">תמונה</div>
+                            <img 
+                                src={item.imgAfter} 
+                                alt="אחרי" 
+                                className="absolute inset-0 w-full h-full object-cover"
+                            />
                             <div className="absolute top-3 left-3 bg-cyan-500/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold text-black shadow-[0_0_15px_rgba(6,182,212,0.4)]">
                                 אחרי
                             </div>
