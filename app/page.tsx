@@ -36,7 +36,7 @@ export default function DvirMoskovichNewPage() {
   const transformations = [
     {
       id: 1,
-      name: "עמית ר.",
+      name: "דביר מ.",
       achievement: "חיטוב ועליה במסה",
       text: "חשבתי שניסיתי הכל, אבל השיטה של דביר הוכיחה לי שאפשר אחרת. האנרגיות שלי בשמיים.",
       imgBefore: "/before2.jpeg", 
@@ -44,7 +44,7 @@ export default function DvirMoskovichNewPage() {
     },
     {
       id: 2,
-      name: "דניאל ק.",
+      name: "אוראל ט.",
       achievement: "חיטוב ועליה במסה",
       text: "לא רק הגוף השתנה, אלא כל הביטחון העצמי שלי. דביר לא מוותר לך, וזה בדיוק מה שהייתי צריך.",
       imgBefore: "/before1.png",
@@ -55,8 +55,8 @@ export default function DvirMoskovichNewPage() {
       name: "רועי מ.",
       achievement: "ירידה של 10 ק״ג",
       text: "מקצוענות ברמה הכי גבוהה שיש. הדיוק בתזונה ובאימונים הביא אותי לשיא של החיים שלי.",
-      imgBefore: "/before3.jpeg", // תמונה חדשה
-      imgAfter: "/after3.jpeg"    // תמונה חדשה
+      imgBefore: "/before3.jpeg",
+      imgAfter: "/after3.jpeg"
     }
   ];
 
